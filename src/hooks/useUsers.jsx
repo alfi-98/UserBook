@@ -1,24 +1,27 @@
 import { useEffect, useState } from "react";
-import { getUserById } from "../api/userApi";
-import { getPosts } from "../api/postApi";
+import { getAllUsers } from "../api/userApi";
 
-function useUser(userId) {
-  const [user, setUser] = useState(null);
-  const [userPosts, setUserPosts] = useState([]);
+function useUsers() {
+  const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function fetchUserAndPosts() {
-      const userData = await getUserById(userId);
-      setUser(userData);
+    setIsLoading(true);
+    getAllUsers()
+      .then((response) => {
+        console.log(response.data);
+        setUsers(response.data.users);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error);
+        setIsLoading(false);
+      });
+  }, []);
 
-      const userPostsData = await getPosts(userId);
-      setUserPosts(userPostsData);
-    }
-
-    fetchUserAndPosts();
-  }, [userId]);
-
-  return { user, userPosts };
+  return { users, isLoading, error };
 }
 
-export default useUser;
+export default useUsers;
