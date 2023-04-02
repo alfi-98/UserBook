@@ -28,3 +28,11 @@ This is a React application that displays a list of users and their associated p
 - Two custom hooks will be created to retrieve data from the API.
 - useUsers() will return all users from the API.
 - useUser() will return a specific user and their associated posts.
+
+
+## To start the project:
+
+- Clone the repository from Github
+- Install the required dependencies by running npm install
+- Start the development server by running npm start
+- Open your web browser and navigate to http://localhost:3000/ to view the app
