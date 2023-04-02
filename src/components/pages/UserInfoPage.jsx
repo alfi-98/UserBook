@@ -5,6 +5,14 @@ function UserInfoPage() {
   const { userId } = useParams();
   const { user, userPosts } = useUser(userId);
 
+  if (!user) {
+    return <div>Loading user data...</div>;
+  }
+
+  if (!userPosts.length) { // Add a check for empty userPosts
+    return <div>Loading user posts...</div>;
+  }
+
   return (
     <div>
       <h1>{user.firstName} {user.lastName}</h1>

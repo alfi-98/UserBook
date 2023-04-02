@@ -9,24 +9,26 @@ function useUser(userId) {
   useEffect(() => {
     getUserById(userId)
       .then((response) => {
-        console.log('user data:', response.data);
         setUser(response.data);
 
         getPosts(userId)
           .then((response) => {
-            console.log('user posts:', response.data);
-            setUserPosts(response.data);
+            if (Array.isArray(response.data)) {
+              setUserPosts(response.data);
+            } else {
+              console.error("Error fetching user posts: response is not an array");
+            }
           })
           .catch((error) => {
-            console.error('Error fetching user posts:', error);
+            console.error("Error fetching user posts:", error);
           });
       })
       .catch((error) => {
-        console.error('Error fetching user data:', error);
+        console.error("Error fetching user data:", error);
       });
   }, [userId]);
 
-  console.log('user object:', user);
+  console.log("user object:", user);
 
   return { user, userPosts };
 }

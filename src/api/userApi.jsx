@@ -7,5 +7,6 @@ export const getAllUsers = () => {
 };
 
 export const getUserById = (userId) => {
+    console.log("API",userId)
     return axios.get(`${BASE_URL}/users/${userId}`)
 }
