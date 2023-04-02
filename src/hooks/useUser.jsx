@@ -7,16 +7,26 @@ function useUser(userId) {
   const [userPosts, setUserPosts] = useState([]);
 
   useEffect(() => {
-    async function fetchUserAndPosts() {
-      const userData = await getUserById(userId);
-      setUser(userData);
+    getUserById(userId)
+      .then((response) => {
+        console.log('user data:', response.data);
+        setUser(response.data);
 
-      const userPostsData = await getPosts(userId);
-      setUserPosts(userPostsData);
-    }
-
-    fetchUserAndPosts();
+        getPosts(userId)
+          .then((response) => {
+            console.log('user posts:', response.data);
+            setUserPosts(response.data);
+          })
+          .catch((error) => {
+            console.error('Error fetching user posts:', error);
+          });
+      })
+      .catch((error) => {
+        console.error('Error fetching user data:', error);
+      });
   }, [userId]);
+
+  console.log('user object:', user);
 
   return { user, userPosts };
 }

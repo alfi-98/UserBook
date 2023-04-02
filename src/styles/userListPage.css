@@ -74,6 +74,10 @@
   .card-secondary-container p:last-child {
     opacity: 0.5;
   }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
   
 
 
