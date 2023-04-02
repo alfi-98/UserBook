@@ -78,7 +78,46 @@
     color: inherit;
     text-decoration: none;
   }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
   
-
-
-
+  .search-container input[type="text"] {
+    width: 200px;
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: rgb(185, 185, 185);
+  
+  }
+  
+  .search-container button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .search-container button[type="submit"]:hover {
+    background-color: #3e8e41;
+    border-radius: 5px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .user-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media screen and (max-width: 350px) {
+    .user-list {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  

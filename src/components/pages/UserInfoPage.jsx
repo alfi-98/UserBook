@@ -31,6 +31,30 @@ function UserInfoPage() {
                 <p className="small-heading">Company Name</p>
                 <p className="user-company">{user.company ? user.company.name : 'N/A'}</p>
               </div>
+              <div>
+                <p className="small-heading">Position</p>
+                <p className="user-company">{user.company ? user.company.title : 'N/A'}</p>
+              </div>
+              <div>
+                <p className="small-heading">Phone</p>
+                <p className="user-company">{user.phone}</p>
+              </div>
+              <div>
+                <p className="small-heading">University</p>
+                <p className="user-company">{user.university}</p>
+              </div>
+              <div>
+                <p className="small-heading">DOB</p>
+                <p className="user-company">{user.birthDate}</p>
+              </div>
+              <div>
+                <p className="small-heading">Age</p>
+                <p className="user-company">{user.age}</p>
+              </div>
+              <div>
+                <p className="small-heading">Blood Group</p>
+                <p className="user-company">{user.bloodGroup}</p>
+              </div>
             </div>
           </div>
         </div>
