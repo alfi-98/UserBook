@@ -48,6 +48,7 @@ This is a React application that displays a list of users and their associated p
 ![Screenshot 2023-04-03 at 12 18 55 AM](https://user-images.githubusercontent.com/66726759/229371680-1c058b9e-7575-4292-a65c-e2c5a33d867a.png)
 
 -The UI is also responsive:
+
 ![Screenshot 2023-04-03 at 12 18 46 AM](https://user-images.githubusercontent.com/66726759/229371702-48dddd37-6de1-470e-8176-587d62b9bdad.png)
 ![Screenshot 2023-04-03 at 12 19 09 AM](https://user-images.githubusercontent.com/66726759/229371706-7de94683-2520-411b-852e-f8de5cbd0e57.png)
 
